@@ -28,13 +28,14 @@ with open('Default.sublime-commands', 'w+') as f:
         slug = url.split('/')[3].split('#')[0]
 
         if (topic not in found):
+            found.append(topic)
+
             if not first:
                 f.write(', \n    ')
             else:
                 f.write('    ')
                 first = False
-                
-            found.append(topic);
+
             j = {
                 "caption": "Laravel Docs: {}".format(topic),
                 "command": "laravel_docs",
