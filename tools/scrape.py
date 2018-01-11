@@ -19,7 +19,7 @@ links = re.findall('"(/docs/.*?)"', docs.read().decode('utf-8'))
 found = []
 
 # Format each link as a sublime command, regenerate the command file
-with open('Default.sublime-commands', 'w+') as f:
+with open('../Default.sublime-commands', 'w+') as f:
     f.write('[\n')
     first = True
     for url in sorted(set(links)):
